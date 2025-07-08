@@ -11,13 +11,13 @@
 <body>
     <header>
         <h1>Recipe Finder</h1>
-        <div id="auth-container" class="auth-container">
+        <nav id="auth-container" class="auth-container">
             <button class="auth-button" id="authButton">Sign In</button>
-        </div>
+        </nav>
     </header>
 
     <main class="recipes-page">
-        <div class="search-section">
+        <section class="search-section">
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search ingredients (press Enter to add)...">
                 <select class="category-select" id="categorySelect">
@@ -25,18 +25,20 @@
                 </select>
             </div>
             <div class="selected-ingredients" id="selectedIngredients"></div>
-        </div>
+        </section>
 
-        <div class="recipes-grid" id="recipesGrid"></div>
-        
-        <div class="pagination" id="pagination">
+        <section class="recipes-grid" id="recipesGrid">
+            <!-- Recipe articles will be injected here -->
+        </section>
+
+        <nav class="pagination" id="pagination" aria-label="Recipe pagination">
             <button id="prevPage">Previous</button>
             <span id="pageInfo">1 of 1</span>
             <button id="nextPage">Next</button>
-        </div>
+        </nav>
     </main>
 
-    <div id="authModal" class="modal-overlay hidden">
+    <section id="authModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="authTitle">
         <div class="modal-content">
             <h2 id="authTitle">Sign In</h2>
             <form id="authForm">
@@ -55,21 +57,21 @@
                 <button type="submit" class="submit-button">Sign In</button>
             </form>
             <button class="switch-auth-mode" id="switchAuthMode">Need an account? Register</button>
-            <button class="close-modal" id="closeModal">×</button>
+            <button class="close-modal" id="closeModal" aria-label="Close">×</button>
         </div>
-    </div>
+    </section>
 
-    <div id="recipeDetailModal" class="recipe-modal-overlay hidden">
+    <section id="recipeDetailModal" class="recipe-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalRecipeTitle">
         <div class="recipe-modal-content">
-            <button class="modal-close" id="closeRecipeModal">×</button>
-            <div class="recipe-modal-header">
+            <button class="modal-close" id="closeRecipeModal" aria-label="Close">×</button>
+            <header class="recipe-modal-header">
                 <img id="modalRecipeImage" src="" alt="">
                 <div class="recipe-modal-title">
                     <h2 id="modalRecipeTitle"></h2>
                     <span id="modalRecipeCategory" class="recipe-modal-category"></span>
                 </div>
-            </div>
-            <div class="recipe-modal-body">
+            </header>
+            <section class="recipe-modal-body">
                 <div class="recipe-modal-ingredients">
                     <h3>Ingredients</h3>
                     <ul id="modalIngredientsList"></ul>
@@ -78,22 +80,21 @@
                     <h3>Instructions</h3>
                     <p id="modalInstructions"></p>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
-    <div class="cookie-banner" id="cookieBanner">
-    <p>We use cookies to enhance your experience. Do you accept?</p>
-    <div class="cookie-actions">
-        <button id="acceptCookies">Accept</button>
-        <button id="declineCookies">Decline</button>
-    </div>
-</div>
+    </section>
 
+    <footer class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to enhance your experience. Do you accept?</p>
+        <div class="cookie-actions">
+            <button id="acceptCookies">Accept</button>
+            <button id="declineCookies">Decline</button>
+        </div>
+    </footer>
 
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
     <script src="js/firebase-config.js"></script>
     <script src="js/main.js"></script>
-    
 </body>
 </html>
