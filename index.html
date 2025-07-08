@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Recipe Finder</h1>
+        <div id="auth-container" class="auth-container">
+            <button class="auth-button" id="authButton">Sign In</button>
+        </div>
+    </header>
+
+    <main class="recipes-page">
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search ingredients (press Enter to add)...">
+                <select class="category-select" id="categorySelect">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <div class="selected-ingredients" id="selectedIngredients"></div>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid"></div>
+        
+        <div class="pagination" id="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageInfo">1 of 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </main>
+
+    <div id="authModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 id="authTitle">Sign In</h2>
+            <form id="authForm">
+                <div class="form-group username-group hidden">
+                    <input type="text" id="username" placeholder="Username">
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email">
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit" class="submit-button">Sign In</button>
+            </form>
+            <button class="switch-auth-mode" id="switchAuthMode">Need an account? Register</button>
+            <button class="close-modal" id="closeModal">×</button>
+        </div>
+    </div>
+
+    <div id="recipeDetailModal" class="recipe-modal-overlay hidden">
+        <div class="recipe-modal-content">
+            <button class="modal-close" id="closeRecipeModal">×</button>
+            <div class="recipe-modal-header">
+                <img id="modalRecipeImage" src="" alt="">
+                <div class="recipe-modal-title">
+                    <h2 id="modalRecipeTitle"></h2>
+                    <span id="modalRecipeCategory" class="recipe-modal-category"></span>
+                </div>
+            </div>
+            <div class="recipe-modal-body">
+                <div class="recipe-modal-ingredients">
+                    <h3>Ingredients</h3>
+                    <ul id="modalIngredientsList"></ul>
+                </div>
+                <div class="recipe-modal-instructions">
+                    <h3>Instructions</h3>
+                    <p id="modalInstructions"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cookie-banner" id="cookieBanner">
+    <p>We use cookies to enhance your experience. Do you accept?</p>
+    <div class="cookie-actions">
+        <button id="acceptCookies">Accept</button>
+        <button id="declineCookies">Decline</button>
+    </div>
+</div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
