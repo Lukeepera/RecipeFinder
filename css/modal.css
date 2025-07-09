@@ -85,7 +85,6 @@
     color: var(--secondary-color);
 }
 
-/* Recipe Modal Styles */
 .recipe-modal-content {
     background-color: white;
     border-radius: 16px;
@@ -183,4 +182,9 @@
 
 .hidden {
     display: none !important;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    line-height: 0.5;
 }

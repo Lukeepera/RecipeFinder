@@ -11,7 +11,7 @@ const authButton = document.getElementById('authButton');
 
 
 let currentPage = 1;
-const mealsPerPage = 8;
+const mealsPerPage = 9;
 let meals = [];
 const selectedIngredients = new Set();
 
